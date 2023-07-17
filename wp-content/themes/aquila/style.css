@@ -18,3 +18,27 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /*TK: Thanhnv*/
 /*Mk: nguyenvanthanh@123*/
+
+a{
+    text-decoration: none !important;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+
+/* Entry meta */
+.updated:not(.published){
+    display: none;
+}
+
+/* Nav item */
+.nav-item:hover .dropdown-menu:not(.show){
+    display: block;
+}
+
+/* Pagination */
+.page-numbers.current > span{
+    background-color: gray;
+    color: #fff;
+}

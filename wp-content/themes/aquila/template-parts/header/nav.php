@@ -12,13 +12,15 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
 
 ?>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <?php
+        <div class="logo">
+            <?php
             if (function_exists('the_custom_logo')){
                 the_custom_logo();
             }
-        ?>
+            ?>
+        </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,7 +28,7 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
             <?php
                 if (!empty($header_menus) && is_array($header_menus)){
             ?>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-4">
                         <?php
                             foreach ($header_menus as $menu_item) {
                                 if (!$menu_item->menu_item_parent){
@@ -42,7 +44,7 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
                                     }else{
                                         ?>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="<?php echo esc_url($menu_item->url); ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <a class="nav-link dropdown-toggle" href="<?php echo esc_url($menu_item->url); ?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <?php echo esc_html($menu_item->title); ?>
                                             </a>
                                             <div class="dropdown-menu">
